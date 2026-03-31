@@ -4,15 +4,14 @@ public:
         int n = nums.size();
 
         vector<int> result;
-        vector<int> check(n + 1, 0);
-
+        unordered_set<int> freq;
+        
+        
         for (int x : nums) {
-            check[x]++;
+            freq.insert(x);
         }
-        for (int i = 1; i <= n; i++) {
-            if (check[i] == 0) {
-                result.push_back(i);
-            }
+        for (int i=1; i<=n; i++){
+            if(freq.find(i) == freq.end()) result.push_back(i);
         }
         return result;
     }
