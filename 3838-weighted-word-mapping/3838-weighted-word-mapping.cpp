@@ -11,8 +11,8 @@ public:
         string ans = "";
         for(auto word : words){
             int weight = 0;
-            for(int i=0; i<word.size(); i++){
-                weight += weights[word[i] - 'a'];
+            for(char l : word){
+                weight += weights[l - 'a'];
             }
             ans += alpha[weight % 26];        
         }
